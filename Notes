@@ -1,0 +1,20 @@
+Jenkins:
+--------
+1.CICD theory
+2.Jenkins theory
+3.Launch EC2
+4.Install Java
+5.Install Jenkins
+6.First Jenkins Job
+7.Create Frontend project
+  .Private S3 bucket
+  .Create Cloudfront
+8.Test website
+9.Give Jenkins AWS permission
+10.Connect Github --> Jenkins
+11.Create Jenkinsfile
+12.Jenkins S3 --> S3 deployment
+13.Cloud invalidation
+14.Github webhook
+15.Route 53/custom domain
+16.Final automatic deployment
