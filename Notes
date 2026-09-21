@@ -18,3 +18,106 @@ Jenkins:
 14.Github webhook
 15.Route 53/custom domain
 16.Final automatic deployment
+
+1.What is CI/CD?
+Contineous Integration - CI
+CI means developers frequently integrate their code into a shared repository such as GitHub,
+after which automated processes validate/build/test it.
+
+Witout CI:
+---------
+Developer
+|
+Writes code
+|
+Manually builds
+|
+Manually tests
+|
+Manully copies files
+
+With CI:
+--------
+Developer
+|
+git push
+|
+GitHub
+|
+Jenkins
+|
+Build
+|
+Test
+
+The goal is to catch problems early and make the build process repeatable.
+
+2.What is Continuos Delivery/Deployment?
+Continuos Delivery/Deployment - CD
+After CI completes successfully, the application needs to reach an environment.
+
+Code
+|
+Build
+|
+Test
+|
+Deploy
+
+Continuos Delivery normally means software is kept in a deployable state, with production release potentially requiring approval
+Continuos Deployment goes further: qualifying chnages are automatically released without a manual production approval.
+
+Today Lab:
+----------
+Github
+|
+Jenkins
+|
+S3
+
+Note: Jenkins performance the deployment automatically
+
+ 3.What is Jenkins?
+Jenkins is an Open-source automation server widely used to implement CI/CD workflows.
+
+Instead of an engineer repeatedly executing deployment commands, Jekins executes predefined pipeline steps
+Example:
+--------
+Without Jenkins:
+----------------
+git pull
+aws s3 sync . s3://bucket-name
+aws cloudfront create-invalidation
+
+Engineer must execute these commands every release.
+
+with Jenkins:
+-------------
+Developer --> git push
+                  |
+                Jenkins
+                  |
+    commands execute automatically
+
+4.Why Jenkins?
+Feature:            Purpose:
+----------------------------
+Automation          Removes repetitive manual deployment
+Pipeline            Defines CI/CD workflow
+Plugins             Integrate with other systems
+Git Integration     Retrives application code
+Credentials         Handles secrets securely
+Distrubuted builds  Work can run an agents
+Build history       Tracks pipeline executions
+Logs                Helps troubleshooting
+Webhooks            Automatically triggers builds
+Pipeline as code    Stores pipeline with application code
+
+
+
+
+
+
+
+
+
