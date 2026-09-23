@@ -113,6 +113,83 @@ Logs                Helps troubleshooting
 Webhooks            Automatically triggers builds
 Pipeline as code    Stores pipeline with application code
 
+5.Jenkins Architecture:
+-----------------------
+              Jenkins Controller
+                     |
+                     |
+      -----------------------------------
+    |                |                    |
+Agent-1            Agent-2            Agent-3
+
+Controller: Respoonsible for things such as:
+.Web UI
+.Job configuration
+.Scheduling
+.Credentials
+.Plugin management
+.pipeline coordination
+.Agent management
+
+
+Agent: A worker that executes pipeline workloads
+
+For today Small classroom environment:
+Controller + Build execution (use same Ec2 instance)
+
+Note: For production, workloads are commonly separated onto dedicated/ephemeral agents rahter than running everything
+on the controller.
+
+6.Important Jenkins Terminology:
+--------------------------------
+Job : A task configuration in Jenkins
+Ex: Deploy frontend website
+
+Build : One execution of a job
+Build #1
+Build #2
+Build #3
+
+Pipeline: The entire automated workflow
+Checkout -> Build -> Test -> Deploy
+
+Stage: One logical section
+Ex:stage('Deploy')
+
+Step: An action within a stage
+Ex: sh 'aws s3 ls'
+
+Workspace:Directory Jenkins uses for a job's checkout-out files and build operations.
+
+Plugin: Extension that adds Jenkins capabilities/integrations
+
+Jenkinsfile: Text file containing the pipeline definition
+Application repository:
+            |
+            |--index.html
+            |--style.css
+            |-Jenkinsfile
+
+This is called Pipeline as Code
+
+Hands-On Starts Here:
+---------------------
+Lab 1 - Luanch Jenkins EC2
+Name : jenkins
+AMI : Ubuntu Server 24.04 LTS
+Instance Type : t3.medium
+Storage : 25 GB gp3
+
+Lab 2 - Jenkins Security Group
+SSH : 22
+Custom TCP : 8080 My IP initially
+HTTP : 80
+HTPPS : 443
+
+Connect to Instance do install the following
+Install java
+Install jenkins
+Access Jenkins : (copy public IP following by the jenkins port No : 8080)
 
 
 
