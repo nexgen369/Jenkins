@@ -191,6 +191,49 @@ Install java
 Install jenkins
 Access Jenkins : (copy public IP following by the jenkins port No : 8080)
 
+Jenkins Dashboard Tour:
+-----------------------
+Dashboard
+New item
+People
+Build history
+Manage jenkins
+Credentials
+plugins
+Nodes
+
+Explanation:
+------------
+New Item
+|
+Create job
+|
+Build History
+|
+Previous execution
+Manage jenkins
+|
+Adminstration
+|
+Credentials
+|
+Scretes/tokens
+Plugins
+|
+Integration
+Nodes
+|
+Controller/agents
+
+First Jenkins Job:
+------------------
+New Item
+Name: my-first-job
+Select:
+Freestyle project
+Click : ok
+
+Build Steps --> add build step --> Execute shell
 
 
 
